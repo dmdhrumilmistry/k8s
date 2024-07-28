@@ -5,10 +5,14 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  tls:
+  - hosts:
+      - dmdhrumilmistry.local
+    secretName: secure-ingress
   ingressClassName: nginx # newer NGINX-INGRESS needs this
   rules:
   - host: dmdhrumilmistry.local
-  - http:
+    http:
       paths:
       - path: /service1
         pathType: ImplementationSpecific
@@ -25,3 +29,22 @@ spec:
             name: service2
             port:
               number: 80
+
+  # - host: labs.localhost
+  #   http:
+  #     paths:
+  #     - path: /labs-service1
+  #       pathType: ImplementationSpecific
+  #       backend:
+  #         service:
+  #           name: service1
+  #           port:
+  #             number: 80
+      
+  #     - path: /labs-service2
+  #       pathType: Prefix
+  #       backend:
+  #         service:
+  #           name: service2
+  #           port:
+  #             number: 80
