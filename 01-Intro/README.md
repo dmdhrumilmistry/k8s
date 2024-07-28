@@ -5,9 +5,10 @@
 
 ## Mini K8s Installation
 
-- Install [docker](https://docs.docker.com/engine/install/) 
+* Install [docker](https://docs.docker.com/engine/install/) 
 
-- Install minikube
+* Install minikube
+
 ```bash
 # using brew
 brew install minikube
@@ -17,36 +18,42 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin
 sudo install minikube-darwin-arm64 /usr/local/bin/minikube
 ```
 
-- start cluster
+* start cluster
+
 ```bash
 minikube start --driver docker --cni calico
 ```
 
-- check status
+* check status
+
 ```bash
 minikube status
 ```
 
-- Install addons
+* Install addons
 ```bash
 minikube addons enable metrics-server
 minikube addons enable ingress # run minikube tunnel after installation
 ```
 
 ## Most Used Cmds
+
 > `k` == `kubectl`
 
-- get nodes
+* get nodes
+
 ```bash
 kubectl get nodes
 ```
 
-- apply config from file
+* apply config from file
+
 ```bash
 kubectl apply -f {file_path} 
 ```
 
-- get info
+* get info
+
 ```bash
 kubectl get all
 kubectl get pod
@@ -55,17 +62,20 @@ kubectl get secret
 kubectl get svc
 ```
 
-- get all deployments
+* get all deployments
+
 ```bash
 k get deployment --all-namespaces
 ```
 
-- get pod name using label
+* get pod name using label
+
 ```bash
 kubectl get pods --namespace default -l "app=build-code" -o jsonpath="{.items[0].metadata.name}" # -l: label
 ```
 
-- describe cmd
+* describe cmd
+
 ```bash
 # describe service
 kubectl describe service {service_name}
@@ -74,21 +84,24 @@ kubectl describe service {service_name}
 kubectl describe pod {pod_name}
 ```
 
-- view logs
+* view logs
+
 ```bash
 kubectl logs {pod_name}
 ```
 
 ## Access Service 
 
-- Access Service
+* Access Service
+
 ```bash
 minikube service <service-name> --url
 ```
 
 **OR** 
 
-- get of node
+* get of node
+
 ```bash
 kubectl get node -o wide
 
@@ -98,18 +111,21 @@ minikube ip
 
 ## Stop K8s server
 
-- Halt cluster
+* Halt cluster
+
 ```bash
 minikube stop
 ```
 
 
-- delete minikube clusters
+* delete minikube clusters
+
 ```bash
 minikube delete --all
 ```
 
 ## Extra Config
+
 * export kubectl alias 
 
 ```bash
@@ -118,12 +134,15 @@ source ~/.zshrc
 ```
 
 ## Docs
+
 * https://minikube.sigs.k8s.io/docs/start/
 
 ## Lab Resources
+
 * https://github.com/killer-sh/cks-course-environment
 * https://killercoda.com/killer-shell-cks
 
 ## Exam Link
+
 * https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/
 
