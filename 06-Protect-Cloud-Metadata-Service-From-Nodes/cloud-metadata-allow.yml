@@ -1,0 +1,16 @@
+# default deny metadata service policy
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: cloud-metadata-allow
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      role: metadata-accessor
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - ipBlock: # block of ip, Note: it is different from blocking IP
+        cidr: 169.254.169.254/32
