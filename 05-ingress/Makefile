@@ -1,4 +1,5 @@
 apply:
+	@kubectl apply -f secrets.yaml
 	@kubectl apply -f service1.yaml
 	@kubectl apply -f service2.yaml
 	@kubectl apply -f ingress.yaml
