@@ -10,5 +10,6 @@ Notes and Cheatsheet for K8s
 * [04 Securing GUI Elements/Dashboard](./04-securing-gui-elements/)
 * [05 Ingress](./05-ingress/)
 * [06 Protecting Cloud Metadata Service from Nodes](./06-Protect-Cloud-Metadata-Service-From-Nodes/)
+* [07 CIS Benchmarks](./07-CIS-Benchmarks/)
 * [Basic Application Deployment Template](./basic-template/)
 * [CTF](./CTF/)

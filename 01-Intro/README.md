@@ -1,6 +1,5 @@
-# Intro
-
 ## Arch Diagram
+
 ![K8s Arch](https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg)
 
 ## Mini K8s Installation
