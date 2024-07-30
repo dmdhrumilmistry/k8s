@@ -116,3 +116,5 @@ Below section is only meant for minikube k8s cluster
     # Output
     # 154edeb7deb7e7559a8c63c26bd39e6c67b666515e5607bba55756ea1f06801a77e1ddb1ad6a4049e5156e9cdbb1d742f5b5a78159d4839b1aec9dc8176928e8 /proc/2051/root/usr/local/bin/kube-apiserver
     ```
+    
+    > Both of the hashes are matching!
