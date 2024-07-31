@@ -12,5 +12,6 @@ Notes and Cheatsheet for K8s
 * [06 Protecting Cloud Metadata Service from Nodes](./06-Protect-Cloud-Metadata-Service-From-Nodes/)
 * [07 CIS Benchmarks](./07-CIS-Benchmarks/)
 * [08 Verifying Platform Binaries](./08-Verifying-Platform-Binaries/)
+* [09 RBAC](./09-RBAC/)
 * [Basic Application Deployment Template](./basic-template/)
 * [CTF](./CTF/)
