@@ -55,12 +55,77 @@ Permissions applied are additive
 k auth can-i --list
 ```
 
-## Lab
-
-### Steps
+## Lab 1
 
 * Create namespaces `red` and `blue`
 * User `jane` can only `get` *secrets* in namespace `red`
 * User `jane` can only `get` and `list` *secrets* in namespace `blue`
 * Test it using `auth can-i`
 
+## Lab 2
+
+* Create a ClusterRole `deploy-deleter` which allows to delete deployments
+* User `jane` can `delete` deployments in all namespaces
+* User `jim` can `delete` deployments only in namespace red
+* Test using `auth can-i`
+
+### Create Resources
+
+* Create resources associated with this lab
+
+    ```bash
+    make apply
+    ```
+
+### Test Permissions
+
+#### Lab 1 Tests
+
+* Tests for Red Namespace
+
+    ```bash
+    k -n red auth can-i get secrets --as jane # yes
+    k -n red auth can-i list secrets --as jane # no
+    k -n red auth can-i delete secrets --as jane # no
+    ```
+
+* Tests for Blue Namepsace
+
+    ```bash
+    k -n blue auth can-i get secrets --as jane # yes
+    k -n blue auth can-i list secrets --as jane # yes
+    k -n blue auth can-i delete secrets --as jane # no
+    ```
+
+#### Automated Tests for Both Labs
+
+```bash
+make test
+```
+
+### Destroy Resources
+
+* Delete all resources associated with this lab
+
+    ```bash
+    make destroy
+
+
+### Troubleshoot Permissions
+
+* Check All Bindings
+
+    ```bash
+    kubectl get clusterrolebinding -o wide | grep jim
+    kubectl get rolebinding -A -o wide | grep jim
+    ```
+
+* Verify Role and ClusterRole Permissions:
+
+    ```bash
+    kubectl describe clusterrole deploy-deleter
+    kubectl describe rolebinding deploy-deleter -n lab2-red
+    ```
+
+## Resources
+* [K8s RBAC Docs](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)

@@ -1,0 +1,26 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: deploy-deleter
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: deploy-deleter
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: jane
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: deploy-deleter
+  namespace: lab2-red
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: deploy-deleter
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: jim
