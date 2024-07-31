@@ -109,6 +109,7 @@ make test
 
     ```bash
     make destroy
+    ```
 
 
 ### Troubleshoot Permissions
