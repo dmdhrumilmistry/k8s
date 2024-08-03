@@ -1,0 +1,41 @@
+# SA automount token enabled
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: accessor-pod-automount-allowed
+  name: accessor-pod-automount-allowed
+spec:
+  serviceAccountName: accessor
+  automountServiceAccountToken: true
+  containers:
+  - image: nginx
+    name: accessor-pod
+    resources: 
+      limits:
+        memory: 50Mi
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+---
+# SA auto mount token disabled
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: accessor-pod-automount-restricted
+  name: accessor-pod-automount-restricted
+spec:
+  serviceAccountName: accessor
+  automountServiceAccountToken: false
+  containers:
+  - image: nginx
+    name: accessor-pod
+    resources:
+      limits:
+        memory: 50Mi
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

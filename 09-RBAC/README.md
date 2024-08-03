@@ -227,6 +227,9 @@ make test
 
     ```bash
     k get csr jane -o yaml | grep "certificate:" | awk '{print $2}' | base64 -d > jane.crt
+
+    # OR
+    kubectl get csr jane -o jsonpath='{.status.certificate}'| base64 -d > jane.crt
     ```
 
     > certificate will be stored as `jane.crt` which can be used for authentication along with the key.
