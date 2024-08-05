@@ -1,6 +1,6 @@
 # k8s
 
-Notes and Cheatsheet for K8s
+Notes and Cheatsheet for K8s compiled from various sources and are updated as per my needs.
 
 ## Index
 
