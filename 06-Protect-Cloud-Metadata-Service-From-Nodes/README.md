@@ -21,15 +21,15 @@ make deploy
 
 * denytest pod requests should be blocked
 
-```bash
-k exec denytest -- curl http://169.254.169.254/latest
-```
+    ```bash
+    k exec denytest -- curl http://169.254.169.254/latest
+    ```
 
 * allowtest pod requests should be allowed
 
-```bash
-k exec allowtest -- curl http://169.254.169.254/latest
-```
+    ```bash
+    k exec allowtest -- curl http://169.254.169.254/latest
+    ```
 
 ## Destroy Infra
 

@@ -14,5 +14,6 @@ Notes and Cheatsheet for K8s compiled from various sources and are updated as pe
 * [08 Verifying Platform Binaries](./08-Verifying-Platform-Binaries/)
 * [09 RBAC](./09-RBAC/)
 * [10 Service Account and RBAC](./10-Service-Account-RBAC/)
+* [11 Restricting API Access](./11-Restricting-API-Access/)
 * [Basic Application Deployment Template](./basic-template/)
 * [CTF](./CTF/)

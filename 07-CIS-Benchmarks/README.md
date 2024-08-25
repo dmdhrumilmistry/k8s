@@ -8,17 +8,17 @@
 
 * Run below command to run kube-bench as job
 
-```bash
-k apply -f https://raw.githubusercontent.com/aquasecurity/kube-bench/main/job.yaml
-```
+    ```bash
+    k apply -f https://raw.githubusercontent.com/aquasecurity/kube-bench/main/job.yaml
+    ```
 
 * View kube-bench results
 
-```bash
-k get pods # view pod logs
+    ```bash
+    k get pods # view pod logs
 
-k logs {kube-bench-pod-name}
-```
+    k logs {kube-bench-pod-name}
+    ```
 
 ## Resources
 

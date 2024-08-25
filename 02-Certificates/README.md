@@ -6,22 +6,24 @@
 
 * CA 
 
-```bash
-cat /etc/kubernetes/pki/ca.crt
-```
+    ```bash
+    cat /etc/kubernetes/pki/ca.crt
+    ```
 
 * API Server certificate
-```bash
-cat /etc/kubernetes/pki/ca.crt
-```
+
+    ```bash
+    cat /etc/kubernetes/pki/ca.crt
+    ```
 
 * API Server Client certificate (for communicating with etcd)
-```bash
-cat /etc/kubernetes/pki/apiserver-etcd-client.crt
-```
+
+    ```bash
+    cat /etc/kubernetes/pki/apiserver-etcd-client.crt
+    ```
 
 * API Server Kubelet certificate (for communicating with kubelets)
 
-```bash
-cat /etc/kubernetes/pki/apiserver-kubelet-client.crt
-```
+    ```bash
+    cat /etc/kubernetes/pki/apiserver-kubelet-client.crt
+    ```
