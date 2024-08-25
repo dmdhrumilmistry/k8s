@@ -2,8 +2,9 @@
 
 ## Request Flow
 
-User/SA -> Authentication -> Authorization  -> Access Control -> Resource (Created/Updated/Deleted)
+![Request Flow](/.images/11-Request-Flow.png)
 
+User/SA -> Authentication -> Authorization  -> Access Control -> Resource (Created/Updated/Deleted)
 
 * Authentication (Who are you?)
 * Authorization (Are you allowed to perform requested action)
